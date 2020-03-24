@@ -16,7 +16,7 @@ Magic-books Inc. is a fictional company based in Germany. They have requested fo
 
 ## Live Version
 
-Can be found on https://calculact.herokuapp.com/
+Can be found [here](https://redux-bookstore101.herokuapp.com)
 
 ## Milestones
 
