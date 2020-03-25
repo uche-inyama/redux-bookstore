@@ -6,7 +6,8 @@ import { removeBook } from '../actions';
 
 const BooksList = ({ state }) => (
   <div>
-    <table>
+    <h1>Book Store</h1>
+    <table className='centered highlight'>
       <thead>
         <tr>
           <th>Book ID</th>
@@ -15,8 +16,13 @@ const BooksList = ({ state }) => (
         </tr>
       </thead>
       <tbody>
-        {state.map(book => (
-          <Book title={book.title} category={book.category} key={book.id} />
+        {state.map((book, index) => (
+          <Book
+            title={book.title}
+            category={book.category}
+            id={index + 1}
+            key={book.id}
+          />
         ))}
       </tbody>
     </table>
@@ -24,7 +30,7 @@ const BooksList = ({ state }) => (
 );
 
 BooksList.propTypes = {
-  state: PropTypes.array.isRequired
+  state: PropTypes.instanceOf(Array).isRequired
 };
 
 const mapStateToProps = state => ({

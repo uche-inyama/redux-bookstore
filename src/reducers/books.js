@@ -9,7 +9,6 @@ const defaultState = [
 const booksReducer = (state = defaultState, action) => {
   switch (action.type) {
     case actionTypes.CREATE_BOOK:
-      action.book.id = Math.random();
       return [...state, action.book];
     case actionTypes.REMOVE_BOOK:
       return state.filter((el, index) => index !== action.book.id);
