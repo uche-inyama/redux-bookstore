@@ -7,7 +7,7 @@ import { removeBook } from '../actions';
 const BooksList = ({ state }) => (
   <div>
     <h1>Book Store</h1>
-    <table className='centered highlight'>
+    <table className="centered highlight">
       <thead>
         <tr>
           <th>Book ID</th>
@@ -30,16 +30,16 @@ const BooksList = ({ state }) => (
 );
 
 BooksList.propTypes = {
-  state: PropTypes.instanceOf(Array).isRequired
+  state: PropTypes.instanceOf(Array).isRequired,
 };
 
 const mapStateToProps = state => ({
-  state
+  state,
 });
 const mapDispatchToProps = dispatch => ({
   deleteBook: book => {
     dispatch(removeBook(book));
-  }
+  },
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(BooksList);

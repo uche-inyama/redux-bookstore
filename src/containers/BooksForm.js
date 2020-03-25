@@ -8,7 +8,7 @@ class BooksForm extends React.Component {
     super(props);
     this.state = {
       title: '',
-      category: 'Action'
+      category: 'Action',
     };
     this.handleTitle = this.handleTitle.bind(this);
     this.handleCategory = this.handleCategory.bind(this);
@@ -16,13 +16,13 @@ class BooksForm extends React.Component {
 
   handleTitle(e) {
     this.setState({
-      title: e.target.value
+      title: e.target.value,
     });
   }
 
   handleCategory() {
     this.setState({
-      category: document.querySelector('select').value
+      category: document.querySelector('select').value,
     });
   }
 
@@ -34,7 +34,7 @@ class BooksForm extends React.Component {
       const params = { ...this.state, id: Math.random() };
       document.querySelector('input').value = '';
       this.setState({
-        title: ''
+        title: '',
       });
       if (params.title) addBook(params);
     };
@@ -46,23 +46,23 @@ class BooksForm extends React.Component {
       'Horror',
       'Kids',
       'Learning',
-      'Sci-Fi'
+      'Sci-Fi',
     ];
     return (
       <>
         <form>
           <input
-            type='text'
+            type="text"
             required
-            placeholder='Add Your Book'
+            placeholder="Add Your Book"
             onChange={this.handleTitle}
           />
-          <select name='categories' onChange={this.handleCategory}>
+          <select name="categories" onChange={this.handleCategory}>
             {categories.map(category => (
               <option key={Math.random()}>{category}</option>
             ))}
           </select>
-          <input type='submit' value='Add Book' onClick={handleSubmit} />
+          <input type="submit" value="Add Book" onClick={handleSubmit} />
         </form>
       </>
     );
@@ -70,13 +70,13 @@ class BooksForm extends React.Component {
 }
 
 BooksForm.propTypes = {
-  addBook: PropTypes.func.isRequired
+  addBook: PropTypes.func.isRequired,
 };
 
 const mapDispatchToProps = dispatch => ({
   addBook: book => {
     dispatch(createBook(book));
-  }
+  },
 });
 
 export default connect(null, mapDispatchToProps)(BooksForm);
