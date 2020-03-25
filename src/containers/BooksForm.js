@@ -10,18 +10,12 @@ class BooksForm extends React.Component {
       title: '',
       category: 'Action',
     };
-    this.handleTitle = this.handleTitle.bind(this);
-    this.handleCategory = this.handleCategory.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
-  handleTitle(e) {
+  handleChange() {
     this.setState({
-      title: e.target.value,
-    });
-  }
-
-  handleCategory() {
-    this.setState({
+      title: document.querySelector('input').value,
       category: document.querySelector('select').value,
     });
   }
@@ -55,11 +49,11 @@ class BooksForm extends React.Component {
             type="text"
             required
             placeholder="Add Your Book"
-            onChange={this.handleTitle}
+            onChange={this.handleChange}
           />
-          <select name="categories" onChange={this.handleCategory}>
+          <select name="categories" onChange={this.handleChange}>
             {categories.map(category => (
-              <option key={Math.random()}>{category}</option>
+              <option key={Math.random()} value={category}>{category}</option>
             ))}
           </select>
           <input type="submit" value="Add Book" onClick={handleSubmit} />
