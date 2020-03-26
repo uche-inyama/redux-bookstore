@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Book from '../components/Book';
 import { removeBook } from '../actions';
 
-const BooksList = ({ state }) => (
+const BooksList = ({ books }) => (
   <div>
     <h1>Book Store</h1>
     <table className="centered highlight">
@@ -16,7 +16,7 @@ const BooksList = ({ state }) => (
         </tr>
       </thead>
       <tbody>
-        {state.map((book, index) => (
+        {books.map((book, index) => (
           <Book
             title={book.title}
             category={book.category}
@@ -30,11 +30,11 @@ const BooksList = ({ state }) => (
 );
 
 BooksList.propTypes = {
-  state: PropTypes.instanceOf(Array).isRequired,
+  books: PropTypes.instanceOf(Array).isRequired,
 };
 
 const mapStateToProps = state => ({
-  state,
+  books: state.books,
 });
 const mapDispatchToProps = dispatch => ({
   deleteBook: book => {
