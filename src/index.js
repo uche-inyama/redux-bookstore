@@ -6,6 +6,7 @@ import booksReducer from './reducers/books';
 import App from './App';
 
 const store = createStore(booksReducer);
+console.log(store.getState())
 
 ReactDOM.render(
   <Provider store={store}>
