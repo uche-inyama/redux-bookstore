@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Book from '../components/Book';
 import { removeBook } from '../actions';
 
-const BooksList = ({ state, handleRemoveBook }) => (
+const BooksList = ({ books, handleRemoveBook }) => (
   <div>
     <h1>Book Store</h1>
     <table>
@@ -33,7 +33,7 @@ const BooksList = ({ state, handleRemoveBook }) => (
 );
 
 BooksList.propTypes = {
-  state: PropTypes.instanceOf(Array).isRequired,
+  books: PropTypes.instanceOf(Array).isRequired,
   handleRemoveBook: PropTypes.func.isRequired,
 };
 
