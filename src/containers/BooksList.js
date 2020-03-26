@@ -16,7 +16,7 @@ const BooksList = ({ state, handleRemoveBook }) => (
         </tr>
       </thead>
       <tbody>
-        {state.map((book, index) => (
+        {books.map((book, index) => (
           <Book
             title={book.title}
             id={book.id}
@@ -38,7 +38,7 @@ BooksList.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  state,
+  books: state.books,
 });
 const mapDispatchToProps = dispatch => ({
   handleRemoveBook: book => {
