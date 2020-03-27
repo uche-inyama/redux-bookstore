@@ -42,7 +42,7 @@ BooksList.propTypes = {
   state: PropTypes.instanceOf(Object).isRequired,
   handleFilterChange: PropTypes.func.isRequired,
 };
-/* estlint-disable */
+/* eslint-disable */
 const mapStateToProps = ({ filterReducer, booksReducer }) => {
   let books;
   if (filterReducer.books) {
