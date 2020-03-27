@@ -5,7 +5,9 @@ import Book from '../components/Book';
 import { removeBook, handleFilter } from '../actions';
 import CategoryFilter from '../components/CategoryFilter';
 
-const BooksList = ({ books, handleRemoveBook, state, handleFilterChange }) => (
+const BooksList = ({
+  books, handleRemoveBook, state, handleFilterChange,
+}) => (
   <div>
     <h1>Book Store</h1>
     <CategoryFilter state={state} handleFilter={handleFilterChange} />
@@ -38,7 +40,7 @@ BooksList.propTypes = {
   books: PropTypes.instanceOf(Array).isRequired,
   handleRemoveBook: PropTypes.func.isRequired,
   state: PropTypes.instanceOf(Object).isRequired,
-  handleFilterChange: PropTypes.func.isRequired
+  handleFilterChange: PropTypes.func.isRequired,
 };
 /* estlint-disable */
 const mapStateToProps = ({ filterReducer, booksReducer }) => {
@@ -50,7 +52,7 @@ const mapStateToProps = ({ filterReducer, booksReducer }) => {
   }
   return {
     books,
-    state: booksReducer
+    state: booksReducer,
   };
 };
 /* eslint-enable */
@@ -60,7 +62,7 @@ const mapDispatchToProps = dispatch => ({
   },
   handleFilterChange: (filter, state) => {
     dispatch(handleFilter(filter, state));
-  }
+  },
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(BooksList);

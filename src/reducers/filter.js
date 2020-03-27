@@ -1,7 +1,7 @@
 import { CHANGE_FILTER } from '../actions/index';
 
 const defaultState = {
-  filter: 'All'
+  filter: 'All',
 };
 
 const filterReducer = (state = defaultState, action) => {
@@ -10,13 +10,13 @@ const filterReducer = (state = defaultState, action) => {
       return {
         ...action.state,
         books: action.state.books,
-        filter: action.filter
+        filter: action.filter,
       };
     }
     return {
       ...action.state,
       books: action.state.books.filter(book => book.category === action.filter),
-      filter: action.filter
+      filter: action.filter,
     };
   }
 
