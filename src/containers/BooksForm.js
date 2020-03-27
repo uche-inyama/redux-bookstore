@@ -13,16 +13,22 @@ class BooksForm extends React.Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
-  handleChange() {
-    this.setState({
-      title: document.querySelector('input').value,
-      category: document.querySelector('select').value,
-    });
+  handleChange(e) {
+    if (e.target.tagName === 'INPUT') {
+      this.setState({
+        title: e.target.value,
+      });
+    }
+    if (e.target.tagName === 'SELECT') {
+      this.setState({
+        category: e.target.value,
+      });
+    }
   }
 
   render() {
     const { addBook } = this.props;
-
+    const { title, category } = this.state;
     const handleSubmit = e => {
       e.preventDefault();
       const params = { ...this.state, id: Math.random() };
@@ -50,8 +56,9 @@ class BooksForm extends React.Component {
             required
             placeholder="Add Your Book"
             onChange={this.handleChange}
+            value={title}
           />
-          <select name="categories" onChange={this.handleChange}>
+          <select name="categories" onChange={this.handleChange} value={category}>
             {categories.map(category => (
               <option key={Math.random()} value={category}>{category}</option>
             ))}
@@ -65,6 +72,7 @@ class BooksForm extends React.Component {
 
 BooksForm.propTypes = {
   addBook: PropTypes.func.isRequired,
+
 };
 
 const mapDispatchToProps = dispatch => ({

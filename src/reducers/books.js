@@ -11,7 +11,7 @@ const booksReducer = (state = defaultState, action) => {
     case actionTypes.CREATE_BOOK:
       return [...state, action.book];
     case actionTypes.REMOVE_BOOK:
-      return state.filter((el, index) => index !== action.book.id);
+      return state.filter(book => book.id !== action.id);
     default:
       return state;
   }
