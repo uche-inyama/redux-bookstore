@@ -43,16 +43,16 @@ BooksList.propTypes = {
   handleFilterChange: PropTypes.func.isRequired,
 };
 
-const mapStateToProps = state => {
+const mapStateToProps = ({ filterReducer, booksReducer }) => {
   let books;
-  if (state.filterReducer.books) {
-    books = state.filterReducer.books;
+  if (filterReducer.books) {
+    books = filterReducer.books;
   } else {
-    books = state.booksReducer.books;
+    books = booksReducer.books;
   }
   return {
     books,
-    state: state.booksReducer,
+    state: booksReducer,
   };
 };
 const mapDispatchToProps = dispatch => ({
