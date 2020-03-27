@@ -3,12 +3,16 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Book from '../components/Book';
 import { removeBook, handleFilter } from '../actions';
-import CategoryFilter from '../components/CategoryFilter'
+import CategoryFilter from '../components/CategoryFilter';
 
-const BooksList = ({ books, handleRemoveBook, handleFilter }) => (
+const BooksList = ({
+  books, handleRemoveBook, state, handleFilterChange,
+}) => (
   <div>
     <h1>Book Store</h1>
-    <table>
+    <CategoryFilter state={state} handleFilter={handleFilterChange} />
+
+    <table className="responsive-table highlight centered">
       <thead>
         <tr>
           <th>Book ID</th>
@@ -24,32 +28,40 @@ const BooksList = ({ books, handleRemoveBook, handleFilter }) => (
             category={book.category}
             order={index + 1}
             key={book.id}
-
             handleRemoveBook={handleRemoveBook}
           />
         ))}
       </tbody>
     </table>
-    <CategoryFilter handleFilter={handleFilter} />
-
   </div>
 );
 
 BooksList.propTypes = {
   books: PropTypes.instanceOf(Array).isRequired,
   handleRemoveBook: PropTypes.func.isRequired,
+  state: PropTypes.instanceOf(Object).isRequired,
+  handleFilterChange: PropTypes.func.isRequired,
 };
 
-const mapStateToProps = state => ({
-  books: state.books
-});
+const mapStateToProps = state => {
+  let books;
+  if (state.filterReducer.books) {
+    books = state.filterReducer.books;
+  } else {
+    books = state.booksReducer.books;
+  }
+  return {
+    books,
+    state: state.booksReducer,
+  };
+};
 const mapDispatchToProps = dispatch => ({
   handleRemoveBook: book => {
     dispatch(removeBook(book));
   },
-  handleFilterChange: filter => {
-    dispatch(handleFilter(filter))
-  }
+  handleFilterChange: (filter, state) => {
+    dispatch(handleFilter(filter, state));
+  },
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(BooksList);

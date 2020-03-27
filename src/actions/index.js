@@ -13,7 +13,8 @@ export const removeBook = id => ({
 });
 
 
-export const handleFilter = filter => ({
-  type: CHANGE_FILTER, 
-  filter
-})
+export const handleFilter = (filter, state) => ({
+  type: CHANGE_FILTER,
+  filter,
+  state,
+});
