@@ -6,7 +6,6 @@ import App from './App';
 import reducer from './reducers/index';
 
 const store = createStore(reducer);
-
 ReactDOM.render(
   <Provider store={store}>
     <App />

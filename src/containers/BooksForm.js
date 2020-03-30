@@ -58,9 +58,15 @@ class BooksForm extends React.Component {
             onChange={this.handleChange}
             value={title}
           />
-          <select name="categories" onChange={this.handleChange} value={category}>
+          <select
+            name="categories"
+            onChange={this.handleChange}
+            value={category}
+          >
             {categories.map(category => (
-              <option key={Math.random()} value={category}>{category}</option>
+              <option key={Math.random()} value={category}>
+                {category}
+              </option>
             ))}
           </select>
           <input type="submit" value="Add Book" onClick={handleSubmit} />
@@ -72,7 +78,6 @@ class BooksForm extends React.Component {
 
 BooksForm.propTypes = {
   addBook: PropTypes.func.isRequired,
-
 };
 
 const mapDispatchToProps = dispatch => ({

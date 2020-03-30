@@ -2,12 +2,17 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Book from '../components/Book';
-import { removeBook } from '../actions';
+import { removeBook, handleFilter } from '../actions';
+import CategoryFilter from '../components/CategoryFilter';
 
-const BooksList = ({ books, handleRemoveBook }) => (
+const BooksList = ({
+  books, handleRemoveBook, state, handleFilterChange,
+}) => (
   <div>
     <h1>Book Store</h1>
-    <table>
+    <CategoryFilter state={state} handleFilter={handleFilterChange} />
+
+    <table className="responsive-table highlight centered">
       <thead>
         <tr>
           <th>Book ID</th>
@@ -23,7 +28,6 @@ const BooksList = ({ books, handleRemoveBook }) => (
             category={book.category}
             order={index + 1}
             key={book.id}
-
             handleRemoveBook={handleRemoveBook}
           />
         ))}
@@ -35,14 +39,29 @@ const BooksList = ({ books, handleRemoveBook }) => (
 BooksList.propTypes = {
   books: PropTypes.instanceOf(Array).isRequired,
   handleRemoveBook: PropTypes.func.isRequired,
+  state: PropTypes.instanceOf(Object).isRequired,
+  handleFilterChange: PropTypes.func.isRequired,
 };
-
-const mapStateToProps = state => ({
-  books: state.books,
-});
+/* eslint-disable */
+const mapStateToProps = ({ filterReducer, booksReducer }) => {
+  let books;
+  if (filterReducer.books) {
+    books = filterReducer.books;
+  } else {
+    books = booksReducer.books;
+  }
+  return {
+    books,
+    state: booksReducer,
+  };
+};
+/* eslint-enable */
 const mapDispatchToProps = dispatch => ({
   handleRemoveBook: book => {
     dispatch(removeBook(book));
+  },
+  handleFilterChange: (filter, state) => {
+    dispatch(handleFilter(filter, state));
   },
 });
 
