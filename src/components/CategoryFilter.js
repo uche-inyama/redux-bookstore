@@ -1,4 +1,5 @@
 import React from 'react';
+import './CategoryFilter.css';
 import PropTypes from 'prop-types';
 
 class CategoryFilter extends React.Component {
@@ -32,15 +33,21 @@ class CategoryFilter extends React.Component {
       handleFilter(e.target.value, state);
     };
     return (
-      <>
-        <select name="categories" onChange={handleSelect} value={selectValue}>
+      <div className="CategoryFilter">
+        <h2>Filter By Category</h2>
+        <select
+          name="categories"
+          onChange={handleSelect}
+          value={selectValue}
+          className="filter"
+        >
           {categories.map(category => (
             <option key={Math.random()} value={category}>
               {category}
             </option>
           ))}
         </select>
-      </>
+      </div>
     );
   }
 }

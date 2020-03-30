@@ -1,4 +1,5 @@
 import React from 'react';
+import './BooksList.css';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Book from '../components/Book';
@@ -13,13 +14,13 @@ const BooksList = ({
     <CategoryFilter state={state} handleFilter={handleFilterChange} />
 
     <table className="responsive-table highlight centered">
-      <thead>
+      {/* <thead>
         <tr>
           <th>Book ID</th>
           <th>Title</th>
           <th>Category</th>
         </tr>
-      </thead>
+      </thead> */}
       <tbody>
         {books.map((book, index) => (
           <Book
@@ -52,7 +53,7 @@ const mapStateToProps = ({ filterReducer, booksReducer }) => {
   }
   return {
     books,
-    state: booksReducer,
+    state: booksReducer
   };
 };
 /* eslint-enable */
