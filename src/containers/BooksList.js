@@ -1,10 +1,15 @@
 import React from 'react';
 import './BooksList.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Book from '../components/Book';
 import { removeBook, handleFilter } from '../actions';
 import CategoryFilter from '../components/CategoryFilter';
+
+library.add(faUser);
 
 const BooksList = ({ books, handleRemoveBook, state, handleFilterChange }) => (
   <div>
@@ -12,6 +17,9 @@ const BooksList = ({ books, handleRemoveBook, state, handleFilterChange }) => (
       <li>Bookstore CMS</li>
       <li className="books">BOOKS</li>
       <li className="categories">CATEGORIES</li>
+      <li className="user">
+        <FontAwesomeIcon icon="user" />
+      </li>
     </ul>
 
     <CategoryFilter state={state} handleFilter={handleFilterChange} />
