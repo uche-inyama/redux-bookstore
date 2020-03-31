@@ -1,8 +1,7 @@
 .App {
-  width: 1600px;
-  height: 1434px;
+  width: 1400px;
+  height: 1097px;
   border-radius: 4px;
   box-shadow: 0 0 60px 0 rgba(0, 0, 0, 0.05);
   background-color: #fafafa;
-  margin: 0 auto;
 }

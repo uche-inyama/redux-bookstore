@@ -6,21 +6,17 @@ import Book from '../components/Book';
 import { removeBook, handleFilter } from '../actions';
 import CategoryFilter from '../components/CategoryFilter';
 
-const BooksList = ({
-  books, handleRemoveBook, state, handleFilterChange,
-}) => (
+const BooksList = ({ books, handleRemoveBook, state, handleFilterChange }) => (
   <div>
-    <h1>Book Store</h1>
+    <ul>
+      <li>Bookstore CMS</li>
+      <li className="books">BOOKS</li>
+      <li className="categories">CATEGORIES</li>
+    </ul>
+
     <CategoryFilter state={state} handleFilter={handleFilterChange} />
 
     <table className="responsive-table highlight centered">
-      {/* <thead>
-        <tr>
-          <th>Book ID</th>
-          <th>Title</th>
-          <th>Category</th>
-        </tr>
-      </thead> */}
       <tbody>
         {books.map((book, index) => (
           <Book
@@ -41,7 +37,7 @@ BooksList.propTypes = {
   books: PropTypes.instanceOf(Array).isRequired,
   handleRemoveBook: PropTypes.func.isRequired,
   state: PropTypes.instanceOf(Object).isRequired,
-  handleFilterChange: PropTypes.func.isRequired,
+  handleFilterChange: PropTypes.func.isRequired
 };
 /* eslint-disable */
 const mapStateToProps = ({ filterReducer, booksReducer }) => {
@@ -53,7 +49,8 @@ const mapStateToProps = ({ filterReducer, booksReducer }) => {
   }
   return {
     books,
-    state: booksReducer
+    state: booksReducer,
+    showCategories: false
   };
 };
 /* eslint-enable */
@@ -63,7 +60,7 @@ const mapDispatchToProps = dispatch => ({
   },
   handleFilterChange: (filter, state) => {
     dispatch(handleFilter(filter, state));
-  },
+  }
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(BooksList);

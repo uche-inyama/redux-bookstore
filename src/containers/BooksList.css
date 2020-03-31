@@ -1,5 +1,34 @@
-h1 {
-  font-family: 'Montserrat';
+ul {
+  display: flex;
+  align-items: center;
+  width: 1400px;
+  height: 95px;
+  background-color: #ffffff;
+  padding-left: 0;
+}
+
+ul li {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  /* width: 59px; */
+  font-family: Montserrat;
+  font-size: 13px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 1.9px;
+  color: #121212;
+
+  margin-left: 195px;
+  margin: 0 20px;
+}
+
+ul li:first-child {
+  width: 240px;
+  height: 37px;
+  font-family: Montserrat;
   font-size: 30px;
   font-weight: bold;
   font-stretch: normal;
@@ -7,9 +36,5 @@ h1 {
   line-height: normal;
   letter-spacing: normal;
   color: #0290ff;
-  margin-left: 195px;
-  padding-top: 75px;
-  width: 285px;
-  height: 45px;
-  margin: 0 190px;
+  margin-left: 145px;
 }
