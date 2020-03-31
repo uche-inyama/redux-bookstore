@@ -33,6 +33,7 @@ form {
   line-height: normal;
   letter-spacing: -0.15px;
   color: #c4c4c4;
+  padding-left: 10px;
 }
 
 .selectCategory {
@@ -42,7 +43,7 @@ form {
 }
 
 .addBookButton {
-  font-family: 'Roboto Slab';
+  font-family: "Roboto Slab";
   font-size: 13px;
   font-weight: bold;
   font-stretch: normal;
