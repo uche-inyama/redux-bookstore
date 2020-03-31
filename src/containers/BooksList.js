@@ -11,7 +11,9 @@ import CategoryFilter from '../components/CategoryFilter';
 
 library.add(faUser);
 
-const BooksList = ({ books, handleRemoveBook, state, handleFilterChange }) => (
+const BooksList = ({
+  books, handleRemoveBook, state, handleFilterChange,
+}) => (
   <div>
     <ul>
       <li>Bookstore CMS</li>
@@ -45,7 +47,7 @@ BooksList.propTypes = {
   books: PropTypes.instanceOf(Array).isRequired,
   handleRemoveBook: PropTypes.func.isRequired,
   state: PropTypes.instanceOf(Object).isRequired,
-  handleFilterChange: PropTypes.func.isRequired
+  handleFilterChange: PropTypes.func.isRequired,
 };
 /* eslint-disable */
 const mapStateToProps = ({ filterReducer, booksReducer }) => {
@@ -68,7 +70,7 @@ const mapDispatchToProps = dispatch => ({
   },
   handleFilterChange: (filter, state) => {
     dispatch(handleFilter(filter, state));
-  }
+  },
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(BooksList);
