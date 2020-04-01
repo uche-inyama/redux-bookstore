@@ -1,12 +1,12 @@
-import React from 'react';
-import './CategoryFilter.css';
-import PropTypes from 'prop-types';
+import React from "react";
+import "./CategoryFilter.css";
+import PropTypes from "prop-types";
 
 class CategoryFilter extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectValue: 'All',
+      selectValue: "All"
     };
   }
 
@@ -14,27 +14,26 @@ class CategoryFilter extends React.Component {
     const { handleFilter, state } = this.props;
     const { selectValue } = this.state;
     const categories = [
-      'Action',
-      'Biography',
-      'History',
-      'Horror',
-      'Kids',
-      'Learning',
-      'Sci-Fi',
-      'Fiction',
-      'Non Fiction',
-      'All',
+      "Action",
+      "Biography",
+      "History",
+      "Horror",
+      "Kids",
+      "Learning",
+      "Sci-Fi",
+      "Fiction",
+      "Non Fiction",
+      "All"
     ];
 
     const handleSelect = e => {
       this.setState({
-        selectValue: e.target.value,
+        selectValue: e.target.value
       });
       handleFilter(e.target.value, state);
     };
     return (
       <div className="CategoryFilter">
-        <h2>Filter By Category</h2>
         <select
           name="categories"
           onChange={handleSelect}
@@ -54,6 +53,6 @@ class CategoryFilter extends React.Component {
 
 CategoryFilter.propTypes = {
   handleFilter: PropTypes.func.isRequired,
-  state: PropTypes.instanceOf(Object).isRequired,
+  state: PropTypes.instanceOf(Object).isRequired
 };
 export default CategoryFilter;

@@ -7,7 +7,8 @@ ul {
   padding-left: 0;
 }
 
-ul li {
+ul li,
+ul span {
   list-style-type: none;
   display: flex;
   align-items: center;
@@ -38,6 +39,9 @@ ul li:first-child {
   margin-left: 145px;
 }
 
+ul span {
+  text-transform: uppercase;
+}
 .user {
   color: #0290ff;
   padding: 20px;
