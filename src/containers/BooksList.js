@@ -1,17 +1,19 @@
-import React from "react";
-import "./BooksList.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { library } from "@fortawesome/fontawesome-svg-core";
-import { faUser } from "@fortawesome/free-solid-svg-icons";
-import { connect } from "react-redux";
-import PropTypes from "prop-types";
-import Book from "../components/Book";
-import { removeBook, handleFilter } from "../actions";
-import CategoryFilter from "../components/CategoryFilter";
+import React from 'react';
+import './BooksList.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import Book from '../components/Book';
+import { removeBook, handleFilter } from '../actions';
+import CategoryFilter from '../components/CategoryFilter';
 
 library.add(faUser);
 
-const BooksList = ({ books, handleRemoveBook, state, handleFilterChange }) => (
+const BooksList = ({
+  books, handleRemoveBook, state, handleFilterChange,
+}) => (
   <div>
     <ul>
       <li>Bookstore CMS</li>
@@ -46,7 +48,7 @@ BooksList.propTypes = {
   books: PropTypes.instanceOf(Array).isRequired,
   handleRemoveBook: PropTypes.func.isRequired,
   state: PropTypes.instanceOf(Object).isRequired,
-  handleFilterChange: PropTypes.func.isRequired
+  handleFilterChange: PropTypes.func.isRequired,
 };
 /* eslint-disable */
 const mapStateToProps = ({ filterReducer, booksReducer }) => {
@@ -69,7 +71,7 @@ const mapDispatchToProps = dispatch => ({
   },
   handleFilterChange: (filter, state) => {
     dispatch(handleFilter(filter, state));
-  }
+  },
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(BooksList);
