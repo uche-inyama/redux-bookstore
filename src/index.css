@@ -1,0 +1,22 @@
+body {
+  width: 1600px;
+  height: 1434px;
+  background-color: #f5f6fa;
+  margin: 0 auto;
+}
+
+table {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+tr {
+  margin: 10px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+td {
+  padding-left: 30px;
+}

@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './BooksForm.css';
 import { connect } from 'react-redux';
 import { createBook } from '../actions/index';
 
@@ -49,17 +50,20 @@ class BooksForm extends React.Component {
       'Sci-Fi',
     ];
     return (
-      <>
+      <div className="BooksForm">
         <form>
+          <h2 className="title">ADD NEW BOOK</h2>
           <input
             type="text"
             required
             placeholder="Add Your Book"
+            className="addBookInput"
             onChange={this.handleChange}
             value={title}
           />
           <select
             name="categories"
+            className="selectCategory"
             onChange={this.handleChange}
             value={category}
           >
@@ -69,9 +73,14 @@ class BooksForm extends React.Component {
               </option>
             ))}
           </select>
-          <input type="submit" value="Add Book" onClick={handleSubmit} />
+          <input
+            type="submit"
+            value="ADD BOOK"
+            className="addBookButton"
+            onClick={handleSubmit}
+          />
         </form>
-      </>
+      </div>
     );
   }
 }

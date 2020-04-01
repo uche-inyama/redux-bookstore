@@ -1,25 +1,33 @@
 import React from 'react';
+import './BooksList.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Book from '../components/Book';
 import { removeBook, handleFilter } from '../actions';
 import CategoryFilter from '../components/CategoryFilter';
 
+library.add(faUser);
+
 const BooksList = ({
   books, handleRemoveBook, state, handleFilterChange,
 }) => (
   <div>
-    <h1>Book Store</h1>
-    <CategoryFilter state={state} handleFilter={handleFilterChange} />
+    <ul>
+      <li>Bookstore CMS</li>
+      <li className="books">BOOKS</li>
+      <span>Filter by category</span>
+      <li className="categories">
+        <CategoryFilter state={state} handleFilter={handleFilterChange} />
+      </li>
+      <li className="user">
+        <FontAwesomeIcon icon="user" />
+      </li>
+    </ul>
 
     <table className="responsive-table highlight centered">
-      <thead>
-        <tr>
-          <th>Book ID</th>
-          <th>Title</th>
-          <th>Category</th>
-        </tr>
-      </thead>
       <tbody>
         {books.map((book, index) => (
           <Book
@@ -53,6 +61,7 @@ const mapStateToProps = ({ filterReducer, booksReducer }) => {
   return {
     books,
     state: booksReducer,
+    showCategories: false
   };
 };
 /* eslint-enable */
