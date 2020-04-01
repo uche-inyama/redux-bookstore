@@ -18,7 +18,7 @@ const BooksList = ({
     <ul>
       <li>Bookstore CMS</li>
       <li className="books">BOOKS</li>
-      <span>categories</span>
+      <span>Filter by category</span>
       <li className="categories">
         <CategoryFilter state={state} handleFilter={handleFilterChange} />
       </li>
