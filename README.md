@@ -14,9 +14,9 @@
 
 Magic-books Inc. is a fictional company based in Germany. They have requested for a front-end application that will help them organize and manage their bookstore. They want it to be fast, dynamic and responsive to their actions.
 
-## [Live Version](https://bookshop102.herokuapp.com/)
+## Live Version
 
-Can be found [here](https://redux-bookstore101.herokuapp.com)
+Can be found [here](https://bookshop102.herokuapp.com/)
 
 ## Milestones
 
