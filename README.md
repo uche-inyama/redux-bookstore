@@ -26,7 +26,9 @@ Mouhamadou Diouf ( <a href="https://github.com/MouhaDiouf"> @mouhad </a>)
 
 Inyama, Uchechukwu Henry ( <a href="https://github.com/uche-inyama/"> @uche-inyama </a>)
 
-## Contributing
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome!
 
 1. Fork it (https://github.com/uche-inyama/redux-bookstore)
 2. Create your feature branch (git checkout -b feature/[choose-a-name])
@@ -35,9 +37,8 @@ Inyama, Uchechukwu Henry ( <a href="https://github.com/uche-inyama/"> @uche-inya
 5. Create a new Pull Request.
 
 
-## 🤝 Contributing
 
-Contributions, issues and feature requests are welcome!
+
 
 ## Show your support
 
