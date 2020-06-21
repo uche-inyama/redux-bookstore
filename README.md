@@ -1,5 +1,7 @@
 # Building a Book store with React & Redux.
 
+![Screenshot from 2020-06-21 19-32-56](https://user-images.githubusercontent.com/46329537/85232375-55247200-b3f6-11ea-8210-c70135b0bd87.png)
+
 ## Technologies
 
 - Node.js
