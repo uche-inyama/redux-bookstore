@@ -20,13 +20,10 @@ Magic-books Inc. is a fictional company based in Germany. They have requested fo
 
 Can be found [here](https://bookshop102.herokuapp.com/)
 
-## Milestones
-
-- **Milestone 1**: [Basic project structure](https://github.com/uche-inyama/redux-bookstore/tree/feature/milestone-one)
-
 ## Developed by
 
 Mouhamadou Diouf ( <a href="https://github.com/MouhaDiouf"> @mouhad </a>)
+
 Inyama, Uchechukwu Henry ( <a href="https://github.com/uche-inyama/"> @uche-inyama </a>)
 
 ## Contributing
@@ -35,4 +32,22 @@ Inyama, Uchechukwu Henry ( <a href="https://github.com/uche-inyama/"> @uche-inya
 2. Create your feature branch (git checkout -b feature/[choose-a-name])
 3. Commit your changes (git commit -am 'What this commit will fix/add')
 4. Push to the branch (git push origin feature/[chosen name])
-5. Create a new Pull Request
+5. Create a new Pull Request.
+
+
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome!
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- [ ]  Zeplin - Microverse
+
+## 📝 License
+
+This project is MIT licensed.
+
