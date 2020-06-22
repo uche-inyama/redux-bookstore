@@ -17,6 +17,14 @@ This project is about understanding how to use redux to manage state in a react 
 - CSS
 - ES6
 
+## Features
+- Ability to add a book.
+- Ability remove a book.
+- Ability to search for a book by category.
+
+## Potential Features
+- Sign up
+- Login
 
 ## Live Version
 
@@ -37,8 +45,6 @@ Contributions, issues and feature requests are welcome!
 3. Commit your changes (git commit -am 'What this commit will fix/add')
 4. Push to the branch (git push origin feature/[chosen name])
 5. Create a new Pull Request.
-
-
 
 
 
