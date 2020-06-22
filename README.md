@@ -14,7 +14,7 @@
 
 ## About the Project
 
-This project is about understanding how to work with redux. 
+This project is about understanding how to use redux to manage state in react application. 
 
 ## Live Version
 
