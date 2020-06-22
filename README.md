@@ -14,7 +14,7 @@
 
 ## About the Project
 
-Magic-books Inc. is a fictional company based in Germany. They have requested for a front-end application that will help them organize and manage their bookstore. They want it to be fast, dynamic and responsive to their actions.
+This project is about understanding how to work with redux. 
 
 ## Live Version
 
