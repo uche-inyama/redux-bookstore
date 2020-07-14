@@ -1,10 +1,11 @@
 .BooksForm {
   text-align: center;
+  height: 100px;
 }
 form {
   display: inline-block;
   text-align: center;
-  padding-left: 80px;
+  /* padding-left: 80px; */
 }
 .title {
   width: 174px;
@@ -21,7 +22,7 @@ form {
 
 .addBookInput,
 .selectCategory {
-  width: 664px;
+  width: 285px;
   height: 45px;
   border-radius: 4px;
   border: solid 1px #e8e8e8;
