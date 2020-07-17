@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
 import "./reset.css";
+import "./index.css";
 import WebFont from "webfontloader";
 import { Provider } from "react-redux";
 import { createStore } from "redux";

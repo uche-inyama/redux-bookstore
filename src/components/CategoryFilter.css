@@ -1,4 +1,4 @@
-.CategoryFilter {
+/* .CategoryFilter {
   font-family: "Montserrat";
   font-size: 13px;
   display: flex;
@@ -21,4 +21,37 @@ select {
   line-height: normal;
   letter-spacing: -0.15px;
   color: #c4c4c4;
+} */
+
+.CategoryFilter,
+span {
+  font-family: "Montserrat";
+  font-size: 0.9em;
+  font-weight: 500;
+}
+select {
+  border-radius: 4px;
+  border: solid 1px #e8e8e8;
+  background-color: #ffffff;
+  font-family: Montserrat;
+  font-size: 1em;
+  font-weight: 400;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.15px;
+  color: #c4c4c4;
+  width: 100px;
+}
+
+@media (min-width: 620px) {
+  select {
+    width: 200px;
+  }
+}
+
+@media (min-width: 768px) {
+  select {
+    width: 250px;
+  }
 }

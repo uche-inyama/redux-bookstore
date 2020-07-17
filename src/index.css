@@ -3,18 +3,3 @@ body {
   height: 800px;
   background-color: #f5f6fa;
 }
-
-table {
-  width: 100%;
-}
-
-tr.Book {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  margin: 20px;
-}
-
-.Book td {
-  padding-left: 20px;
-}

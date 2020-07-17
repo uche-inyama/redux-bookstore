@@ -12,33 +12,40 @@ import CategoryFilter from "../components/CategoryFilter";
 library.add(faUser);
 
 const BooksList = ({ books, handleRemoveBook, state, handleFilterChange }) => (
-  <div>
-    <ul>
-      <li>Bookstore CMS</li>
-      <li className='books'>BOOKS</li>
-      <span>Filter by category</span>
-      <li className='categories'>
-        <CategoryFilter state={state} handleFilter={handleFilterChange} />
+  <div className='bookListWrapper'>
+    <ul class='navigation'>
+      <li className='logo'>
+        <h1>Bookstore CMS</h1>
+        <span>
+          <li className='categories'>
+            <span> </span>
+            <CategoryFilter state={state} handleFilter={handleFilterChange} />
+          </li>
+        </span>
       </li>
+      <li className='nav-icon'>
+        <div></div>
+        <div></div>
+        <div></div>
+      </li>
+      <li className='books'>BOOKS</li>
       <li className='user'>
         <FontAwesomeIcon icon='user' />
       </li>
     </ul>
 
-    <table>
-      <tbody>
-        {books.map((book, index) => (
-          <Book
-            title={book.title}
-            id={book.id}
-            category={book.category}
-            order={index + 1}
-            key={book.id}
-            handleRemoveBook={handleRemoveBook}
-          />
-        ))}
-      </tbody>
-    </table>
+    <div>
+      {books.map((book, index) => (
+        <Book
+          title={book.title}
+          id={book.id}
+          category={book.category}
+          order={index + 1}
+          key={book.id}
+          handleRemoveBook={handleRemoveBook}
+        />
+      ))}
+    </div>
   </div>
 );
 
