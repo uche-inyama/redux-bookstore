@@ -23,7 +23,6 @@ select {
     width: 150px;
   }
 }
-
 @media (min-width: 620px) {
   select {
     width: 200px;
