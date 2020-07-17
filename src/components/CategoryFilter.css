@@ -43,6 +43,11 @@ select {
   color: #c4c4c4;
   width: 100px;
 }
+@media (min-width: 375px) {
+  select {
+    width: 150px;
+  }
+}
 
 @media (min-width: 620px) {
   select {
