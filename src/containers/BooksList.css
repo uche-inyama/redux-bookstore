@@ -46,7 +46,6 @@ span {
   margin: 4px 0;
   cursor: pointer;
 }
-
 @media (min-width: 768px) {
   .nav-icon {
     display: none;
