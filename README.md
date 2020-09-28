@@ -1,5 +1,10 @@
 # Building a Book store with React & Redux.
 
+## About the Project
+
+This project is about understanding how to use redux to manage state in a react application. 
+
+
 ![Screenshot from 2020-06-21 19-32-56](https://user-images.githubusercontent.com/46329537/85232375-55247200-b3f6-11ea-8210-c70135b0bd87.png)
 
 ## Technologies
@@ -12,9 +17,14 @@
 - CSS
 - ES6
 
-## About the Project
+## Features
+- Ability to add a book.
+- Ability remove a book.
+- Ability to search for a book by category.
 
-Magic-books Inc. is a fictional company based in Germany. They have requested for a front-end application that will help them organize and manage their bookstore. They want it to be fast, dynamic and responsive to their actions.
+## Potential Features
+- Sign up
+- Login
 
 ## Live Version
 
@@ -38,8 +48,11 @@ Contributions, issues and feature requests are welcome!
 
 
 
+<<<<<<< HEAD
+=======
 
 
+>>>>>>> origin/master
 ## Show your support
 
 Give a ⭐️ if you like this project!

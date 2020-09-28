@@ -1,46 +1,51 @@
-import React from 'react';
-import './BooksList.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { faUser } from '@fortawesome/free-solid-svg-icons';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
-import Book from '../components/Book';
-import { removeBook, handleFilter } from '../actions';
-import CategoryFilter from '../components/CategoryFilter';
+import React from "react";
+import "./BooksList.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
+import Book from "../components/Book";
+import { removeBook, handleFilter } from "../actions";
+import CategoryFilter from "../components/CategoryFilter";
 
 library.add(faUser);
 
-const BooksList = ({
-  books, handleRemoveBook, state, handleFilterChange,
-}) => (
-  <div>
-    <ul>
-      <li>Bookstore CMS</li>
-      <li className="books">BOOKS</li>
-      <span>Filter by category</span>
-      <li className="categories">
-        <CategoryFilter state={state} handleFilter={handleFilterChange} />
+const BooksList = ({ books, handleRemoveBook, state, handleFilterChange }) => (
+  <div className='bookListWrapper'>
+    <ul class='navigation'>
+      <li className='logo'>
+        <h1>Bookstore CMS</h1>
+        <span>
+          <li className='categories'>
+            <span> </span>
+            <CategoryFilter state={state} handleFilter={handleFilterChange} />
+          </li>
+        </span>
       </li>
-      <li className="user">
-        <FontAwesomeIcon icon="user" />
+      <li className='nav-icon'>
+        <div></div>
+        <div></div>
+        <div></div>
+      </li>
+      <li className='books'>BOOKS</li>
+      <li className='user'>
+        <FontAwesomeIcon icon='user' />
       </li>
     </ul>
 
-    <table className="responsive-table highlight centered">
-      <tbody>
-        {books.map((book, index) => (
-          <Book
-            title={book.title}
-            id={book.id}
-            category={book.category}
-            order={index + 1}
-            key={book.id}
-            handleRemoveBook={handleRemoveBook}
-          />
-        ))}
-      </tbody>
-    </table>
+    <div>
+      {books.map((book, index) => (
+        <Book
+          title={book.title}
+          id={book.id}
+          category={book.category}
+          order={index + 1}
+          key={book.id}
+          handleRemoveBook={handleRemoveBook}
+        />
+      ))}
+    </div>
   </div>
 );
 
@@ -61,12 +66,12 @@ const mapStateToProps = ({ filterReducer, booksReducer }) => {
   return {
     books,
     state: booksReducer,
-    showCategories: false
+    showCategories: false,
   };
 };
 /* eslint-enable */
-const mapDispatchToProps = dispatch => ({
-  handleRemoveBook: book => {
+const mapDispatchToProps = (dispatch) => ({
+  handleRemoveBook: (book) => {
     dispatch(removeBook(book));
   },
   handleFilterChange: (filter, state) => {
