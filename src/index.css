@@ -1,22 +1,8 @@
 body {
-  width: 1600px;
-  height: 1434px;
-  background-color: #f5f6fa;
-  margin: 0 auto;
+  width: 100%;
+  height: 800px;
+  background-color: #e6e9f2;
 }
-
-table {
-  width: 1200px;
-  margin: 0 auto;
-}
-
-tr {
-  margin: 10px auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-}
-
-td {
-  padding-left: 30px;
-}
+/* #c3c7d6; */
+/* #e6e9f2 */
+/* #9daded; */

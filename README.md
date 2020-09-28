@@ -1,5 +1,12 @@
 # Building a Book store with React & Redux.
 
+## About the Project
+
+This project is about understanding how to use redux to manage state in a react application. 
+
+
+![Screenshot from 2020-06-21 19-32-56](https://user-images.githubusercontent.com/46329537/85232375-55247200-b3f6-11ea-8210-c70135b0bd87.png)
+
 ## Technologies
 
 - Node.js
@@ -10,27 +17,58 @@
 - CSS
 - ES6
 
-## About the Project
+## Features
+- Ability to add a book.
+- Ability remove a book.
+- Ability to search for a book by category.
 
-Magic-books Inc. is a fictional company based in Germany. They have requested for a front-end application that will help them organize and manage their bookstore. They want it to be fast, dynamic and responsive to their actions.
+## Potential Features
+- Sign up
+- Login
 
 ## Live Version
 
 Can be found [here](https://bookshop102.herokuapp.com/)
+<<<<<<< HEAD
 
 ## Milestones
 
 - **Milestone 1**: [Basic project structure](https://github.com/uche-inyama/redux-bookstore/tree/feature/milestone-one)
+=======
+>>>>>>> 954733bada859ab14ea4121c83ab1ad7311d0170
 
 ## Developed by
 
 Mouhamadou Diouf ( <a href="https://github.com/MouhaDiouf"> @mouhad </a>)
+
 Inyama, Uchechukwu Henry ( <a href="https://github.com/uche-inyama/"> @uche-inyama </a>)
 
-## Contributing
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome!
 
 1. Fork it (https://github.com/uche-inyama/redux-bookstore)
 2. Create your feature branch (git checkout -b feature/[choose-a-name])
 3. Commit your changes (git commit -am 'What this commit will fix/add')
 4. Push to the branch (git push origin feature/[chosen name])
-5. Create a new Pull Request
+5. Create a new Pull Request.
+
+
+
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> origin/master
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- [ ]  Zeplin - Microverse
+
+## 📝 License
+
+This project is MIT licensed.
+
