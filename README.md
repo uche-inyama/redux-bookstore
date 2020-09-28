@@ -29,13 +29,6 @@ This project is about understanding how to use redux to manage state in a react 
 ## Live Version
 
 Can be found [here](https://bookshop102.herokuapp.com/)
-<<<<<<< HEAD
-
-## Milestones
-
-- **Milestone 1**: [Basic project structure](https://github.com/uche-inyama/redux-bookstore/tree/feature/milestone-one)
-=======
->>>>>>> 954733bada859ab14ea4121c83ab1ad7311d0170
 
 ## Developed by
 
@@ -55,11 +48,6 @@ Contributions, issues and feature requests are welcome!
 
 
 
-<<<<<<< HEAD
-=======
-
-
->>>>>>> origin/master
 ## Show your support
 
 Give a ⭐️ if you like this project!
