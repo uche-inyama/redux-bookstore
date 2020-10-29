@@ -28,7 +28,7 @@ This project is about understanding how to use redux to manage state in a react 
 
 ## Live Version
 
-Can be found [here](https://bookshop102.herokuapp.com/)
+Can be found [here](https://vigilant-lamport-48a962.netlify.app/)
 
 ## Developed by
 
