@@ -47,12 +47,6 @@ Contributions, issues and feature requests are welcome!
 5. Create a new Pull Request.
 
 
-
-<<<<<<< HEAD
-=======
-
-
->>>>>>> origin/master
 ## Show your support
 
 Give a ⭐️ if you like this project!
