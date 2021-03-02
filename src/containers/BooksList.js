@@ -5,7 +5,7 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import Book from "../components/Book";
+import Book from "../components/Book.tsx";
 import { removeBook, handleFilter } from "../actions";
 import CategoryFilter from "../components/CategoryFilter";
 
@@ -13,14 +13,14 @@ library.add(faUser);
 
 const BooksList = ({ books, handleRemoveBook, state, handleFilterChange }) => (
   <div className='bookListWrapper'>
-    <ul class='navigation'>
+    <ul className='navigation'>
       <li className='logo'>
         <h1>Bookstore CMS</h1>
         <span>
-          <li className='categories'>
+          <div className='categories'>
             <span> </span>
             <CategoryFilter state={state} handleFilter={handleFilterChange} />
-          </li>
+          </div>
         </span>
       </li>
       <li className='nav-icon'>

@@ -2,7 +2,13 @@ import React from "react";
 import PropTypes from "prop-types";
 import "./Book.css";
 
-const Book = ({ title, category, handleRemoveBook, id }) => (
+interface Props {
+  title: string;
+  category: string;
+  handleRemoveBook: (id: number) =>void;
+  id: number;
+}
+const Book: React.FC<Props> = ({ title, category, handleRemoveBook, id }) => (
   <>
     <ul className='Book'>
       <li className='bookCategory'>{category}</li>
