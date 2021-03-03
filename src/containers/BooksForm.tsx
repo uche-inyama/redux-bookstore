@@ -1,26 +1,33 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import "./BooksForm.css";
 import { connect } from "react-redux";
 import { createBook } from "../actions/index";
 
-export const BooksForm = (props) => {
+interface Props {
+  addBook: any
+}
+
+export const BooksForm: React.FC <Props> = (Props) => {
   const [bookProperties, setBookProperties] = useState({
     title: "",
     category: "Action"
   })
 
-    const { addBook } = props;
+    const { addBook } = Props;
     const { title, category } = bookProperties;
 
-    const handleSubmit = (e) => {
+    const handleSubmit = (e: { preventDefault: () => void; }) => {
       e.preventDefault();
       const params = {...bookProperties, id: Math.random() };
-      if (params.title) addBook(params);
-      setBookProperties({title: ''})
+      if (params.title){
+        addBook(params);
+      } 
+      setBookProperties({title: '', category: 'Action'})
     };
 
-    const handleChange = (e) => {
+    const handleChange = (e: any) => {
       const { value, name } = e.target
       setBookProperties({
         ...bookProperties,
@@ -78,8 +85,8 @@ BooksForm.propTypes = {
   addBook: PropTypes.func.isRequired,
 };
 
-const mapDispatchToProps = (dispatch) => ({
-  addBook: (book) => {
+const mapDispatchToProps = (dispatch: any) => ({
+  addBook: (book: any) => {
     dispatch(createBook(book));
   },
 });
