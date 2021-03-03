@@ -1,44 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import "./BooksForm.css";
 import { connect } from "react-redux";
 import { createBook } from "../actions/index";
 
-class BooksForm extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      title: "",
-      category: "Action",
-    };
-    this.handleChange = this.handleChange.bind(this);
-  }
+export const BooksForm = (props) => {
+  const [bookProperties, setBookProperties] = useState({
+    title: "",
+    category: "Action"
+  })
 
-  handleChange(e) {
-    if (e.target.tagName === "INPUT") {
-      this.setState({
-        title: e.target.value,
-      });
-    }
-    if (e.target.tagName === "SELECT") {
-      this.setState({
-        category: e.target.value,
-      });
-    }
-  }
+    const { addBook } = props;
+    const { title, category } = bookProperties;
 
-  render() {
-    const { addBook } = this.props;
-    const { title, category } = this.state;
     const handleSubmit = (e) => {
       e.preventDefault();
-      const params = { ...this.state, id: Math.random() };
-      document.querySelector("input").value = "";
-      this.setState({
-        title: "",
-      });
+      const params = {...bookProperties, id: Math.random() };
       if (params.title) addBook(params);
+      setBookProperties({title: ''})
     };
+
+    const handleChange = (e) => {
+      const { value, name } = e.target
+      setBookProperties({
+        ...bookProperties,
+        [name]: value
+      })
+    } 
 
     const categories = [
       "Action",
@@ -49,41 +37,42 @@ class BooksForm extends React.Component {
       "Learning",
       "Sci-Fi",
     ];
-    return (
-      <div className='BooksForm'>
-        <form>
-          {/* <h2 className="title">ADD NEW BOOK</h2> */}
-          <input
-            type='text'
-            required
-            placeholder='Add Your Book'
-            className='addBookInput'
-            onChange={this.handleChange}
-            value={title}
-          />
-          <select
-            name='categories'
-            className='selectCategory'
-            onChange={this.handleChange}
-            value={category}
-          >
-            {categories.map((category) => (
-              <option key={Math.random()} value={category}>
-                {category}
-              </option>
-            ))}
-          </select>
-          <input
-            type='submit'
-            value='ADD BOOK'
-            className='addBookButton'
-            onClick={handleSubmit}
-          />
-        </form>
-      </div>
-    );
-  }
+
+  return (
+    <div className='BooksForm'>
+    <form>
+      <input
+        type='text'
+        name='title'
+        required
+        placeholder='Add Your Book'
+        className='addBookInput'
+        onChange={handleChange}
+        value={title}
+      />
+      <select
+        name='category'
+        className='selectCategory'
+        onChange={handleChange}
+        value={category}
+      >
+        {categories.map((category) => (
+          <option key={Math.random()} value={category}>
+            {category}
+          </option>
+        ))}
+      </select>
+      <input
+        type='submit'
+        value='ADD BOOK'
+        className='addBookButton'
+        onClick={handleSubmit}
+      />
+    </form>
+  </div>
+  )
 }
+
 
 BooksForm.propTypes = {
   addBook: PropTypes.func.isRequired,
