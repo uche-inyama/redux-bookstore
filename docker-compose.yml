@@ -1,0 +1,11 @@
+version: "2"
+services: 
+  ngnix-react:
+    container_name: redux-bookstore
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 8000:80
+    environment:
+      NODE_ENV: production
