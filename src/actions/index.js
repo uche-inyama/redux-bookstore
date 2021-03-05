@@ -1,20 +1,23 @@
-export const CREATE_BOOK = 'CREATE_BOOK';
-export const REMOVE_BOOK = 'REMOVE_BOOK';
-export const CHANGE_FILTER = 'CHANGE_FILTER';
-
-export const createBook = book => ({
-  type: CREATE_BOOK,
-  book,
+const CREATE_BOOK = book => ({
+  type: 'CREATE_BOOK',
+  payload: book,
 });
 
-export const removeBook = id => ({
-  type: REMOVE_BOOK,
-  id,
+const REMOVE_BOOK = id => ({
+  type: 'REMOVE_BOOK',
+  payload: id,
 });
 
 
-export const handleFilter = (filter, state) => ({
-  type: CHANGE_FILTER,
-  filter,
-  state,
+const CHANGE_FILTER = (category) => ({
+  type: 'CHANGE_FILTER',
+  payload: category
 });
+
+export { CREATE_BOOK, REMOVE_BOOK, CHANGE_FILTER };
+
+// export const handleFilter = (filter, state) => ({
+//   type: CHANGE_FILTER,
+//   filter,
+//   state,
+// });

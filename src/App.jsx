@@ -1,10 +1,10 @@
 import React from 'react';
-import BooksList from './containers/BooksList';
+import BooksList from './containers/BooksList.tsx';
 import BooksForm from './containers/BooksForm.tsx';
 
 import './App.css';
 
-function App() {
+const App = () => {
   return (
     <div className="App">
       <BooksList />

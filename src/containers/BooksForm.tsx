@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import "./BooksForm.css";
 import { connect } from "react-redux";
-import { createBook } from "../actions/index";
+import { CREATE_BOOK } from "../actions/index";
 
 interface Props {
   addBook: any
@@ -87,7 +87,7 @@ BooksForm.propTypes = {
 
 const mapDispatchToProps = (dispatch: any) => ({
   addBook: (book: any) => {
-    dispatch(createBook(book));
+    dispatch(CREATE_BOOK(book));
   },
 });
 

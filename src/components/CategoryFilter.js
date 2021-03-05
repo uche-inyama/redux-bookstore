@@ -11,7 +11,7 @@ class CategoryFilter extends React.Component {
   }
 
   render() {
-    const { handleFilter, state } = this.props;
+    const { handleFilter } = this.props;
     const { selectValue } = this.state;
     const categories = [
       "Action",
@@ -30,7 +30,7 @@ class CategoryFilter extends React.Component {
       this.setState({
         selectValue: e.target.value,
       });
-      handleFilter(e.target.value, state);
+      handleFilter(e.target.value);
     };
     return (
       <div className='CategoryFilter'>
@@ -53,6 +53,7 @@ class CategoryFilter extends React.Component {
 
 CategoryFilter.propTypes = {
   handleFilter: PropTypes.func.isRequired,
-  state: PropTypes.instanceOf(Object).isRequired,
+  // state: PropTypes.instanceOf(Object).isRequired,
+  filter: PropTypes.string.isRequired
 };
 export default CategoryFilter;
